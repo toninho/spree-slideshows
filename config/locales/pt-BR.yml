@@ -1,14 +1,14 @@
 ---
 pt-BR:
-  edit_slide: Editando Slide
+  edit_slide: Editando Anúncio
   enabled: Habilitado
   filename: Nome do arquivo
-  groups: Grupos
+  groups: Grupo
   included: Incluído na seleção
-  manage_slideshow: Gerenciar Slides do Slideshow
+  manage_slideshow: Gerenciar Anúncios
   name: Nome
-  new_slide: Novo Slide
+  new_slide: Novo Anúncio
   position: Posição
-  slides: Slides
-  slideshow_slides: Slides do Slideshow
+  slides: Anúncios
+  slideshow_slides: Anúncios
   target_url: URL
