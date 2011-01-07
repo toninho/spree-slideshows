@@ -1,11 +1,20 @@
 module SlideshowsHelper
 
   def insert_slideshow(params={})
-     content_tag :div, :class => 'slideshow' do
-       slide_images(params).each do |slide|
-        concat(link_to(image_tag(slide.img.url), slide.url, { :title => slide.name }))
+     content = ''
+     output = ''     
+     
+     if params[:group] == 'Player'
+       slide_images(params).each { |slide| content << content_tag(:li, content_tag(:a, image_tag(slide.img.url), :title => slide.name, :href => slide.url)) }
+       
+       output << content_tag(:div, :class => 'anythingSlider') do
+         content_tag(:div, content_tag(:ul, content.html_safe), :class => 'wrapper')
        end
-     end
+      else
+        slide_images(params).each { |slide| content << content_tag(:a, image_tag(slide.img.url), :title => slide.name, :href => slide.url) }
+        output << content_tag(:div, content.html_safe, :class => 'Banner')
+      end
+     output.html_safe
    end
 
    def slide_images(params)
