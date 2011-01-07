@@ -8,7 +8,8 @@
   <% f.field_container :groups do %>
     <%= f.label :groups, t("groups") %><br />
     <%= error_message_on :slide, :groups, :class => 'fullwidth title'  %>
-    <%= text_field :slide, :groups  %>
+	<%= select :slide, :groups, ['Player', 'Banner'] %>
+    <%#= text_field :slide, :groups  %>
   <% end %>
 
   <%= image_tag @slide.img.url(:thumb) if @slide.img? %>
